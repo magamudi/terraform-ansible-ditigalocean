@@ -1,4 +1,3 @@
-
 terraform {
   required_providers {
     digitalocean = {
@@ -7,15 +6,15 @@ terraform {
     }
   }
 }
- 
+
 variable "do_token" {}
 variable "pvt_key" {}
+variable "pub_key" {}
 
 provider "digitalocean" {
-  token = var.do_token   
+  token = var.do_token
 }
- 
-data "digitalocean_ssh_key" "myssh" {
-  name = "myssh"
+
+data "digitalocean_ssh_key" "myssh_key" {
+  name = "myssh_key"
 }
- 
